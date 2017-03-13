@@ -1,0 +1,105 @@
+\hypertarget{classbuffer}{}\section{Dokumentacja szablonu klasy buffer$<$ T $>$}
+\label{classbuffer}\index{buffer$<$ T $>$@{buffer$<$ T $>$}}
+
+
+Szablon klasy bufora.  
+
+
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classbuffer_ac93ddd3a9a4bfbb30dc4df278cb51f8a}{add\+Elem} (T elem)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca element na koniec bufora. \end{DoxyCompactList}\item 
+void \hyperlink{classbuffer_ab0d55e3e80f82ff361c9a6f14599fe19}{clear\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Metoda czyszcząca bufor. \end{DoxyCompactList}\item 
+T \hyperlink{classbuffer_a12c4847a2d852f62f6e17cda43d3720d}{get\+First} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca pierwszy element bufora. \end{DoxyCompactList}\item 
+T \hyperlink{classbuffer_a61bf98727f79c794f4e77b36499a87f9}{get\+Last} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca ostatni element bufora. \end{DoxyCompactList}\item 
+bool \hyperlink{classbuffer_a6529128cce7c8b3f85cdae95f22b0589}{is\+Empty} ()
+\begin{DoxyCompactList}\small\item\em Metoda sprawdzająca stan bufora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\subsubsection*{template$<$class T$>$\newline
+class buffer$<$ T $>$}
+
+Szablon klasy bufora. 
+
+Szablon klasy bufora przechowującego logowane wiadomości. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classbuffer_ac93ddd3a9a4bfbb30dc4df278cb51f8a}\label{classbuffer_ac93ddd3a9a4bfbb30dc4df278cb51f8a}} 
+\index{buffer@{buffer}!add\+Elem@{add\+Elem}}
+\index{add\+Elem@{add\+Elem}!buffer@{buffer}}
+\subsubsection{\texorpdfstring{add\+Elem()}{addElem()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classbuffer}{buffer}$<$ T $>$\+::add\+Elem (\begin{DoxyParamCaption}\item[{T}]{elem }\end{DoxyParamCaption})}
+
+
+
+Metoda dodająca element na koniec bufora. 
+
+Metoda, która dodaje element na koniec bufora wiadomości 
+\begin{DoxyParams}{Parametry}
+{\em elem} & Element typu T, który ma być dodany do bufora \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbuffer_ab0d55e3e80f82ff361c9a6f14599fe19}\label{classbuffer_ab0d55e3e80f82ff361c9a6f14599fe19}} 
+\index{buffer@{buffer}!clear\+Buffer@{clear\+Buffer}}
+\index{clear\+Buffer@{clear\+Buffer}!buffer@{buffer}}
+\subsubsection{\texorpdfstring{clear\+Buffer()}{clearBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classbuffer}{buffer}$<$ T $>$\+::clear\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda czyszcząca bufor. 
+
+Metoda, która usuwa wszystkie elementy bufora od pierwszego do ostatniego. \mbox{\Hypertarget{classbuffer_a12c4847a2d852f62f6e17cda43d3720d}\label{classbuffer_a12c4847a2d852f62f6e17cda43d3720d}} 
+\index{buffer@{buffer}!get\+First@{get\+First}}
+\index{get\+First@{get\+First}!buffer@{buffer}}
+\subsubsection{\texorpdfstring{get\+First()}{getFirst()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \hyperlink{classbuffer}{buffer}$<$ T $>$\+::get\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca pierwszy element bufora. 
+
+Metoda zwraca pierwszy element bufora, a także usuwa go z bufora. \begin{DoxyReturn}{Zwraca}
+Pierwszy element bufora. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbuffer_a61bf98727f79c794f4e77b36499a87f9}\label{classbuffer_a61bf98727f79c794f4e77b36499a87f9}} 
+\index{buffer@{buffer}!get\+Last@{get\+Last}}
+\index{get\+Last@{get\+Last}!buffer@{buffer}}
+\subsubsection{\texorpdfstring{get\+Last()}{getLast()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \hyperlink{classbuffer}{buffer}$<$ T $>$\+::get\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca ostatni element bufora. 
+
+Metoda zwraca ostatni element bufora, a także usuwa go z bufora. \begin{DoxyReturn}{Zwraca}
+Ostatni element bufora. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbuffer_a6529128cce7c8b3f85cdae95f22b0589}\label{classbuffer_a6529128cce7c8b3f85cdae95f22b0589}} 
+\index{buffer@{buffer}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!buffer@{buffer}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \hyperlink{classbuffer}{buffer}$<$ T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda sprawdzająca stan bufora. 
+
+Metoda, która sprawdza czy bufor jest pusty czy też nie. \begin{DoxyReturn}{Zwraca}
+true gdy bufor jest pusty, false gdy nie 
+\end{DoxyReturn}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+buffer.\+cpp\end{DoxyCompactItemize}

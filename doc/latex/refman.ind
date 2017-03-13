@@ -1,0 +1,18 @@
+\begin{theindex}
+
+  \item {add\+Elem}
+    \subitem {buffer}, \hyperpage{5}
+
+  \indexspace
+
+  \item {buffer}
+    \subitem {add\+Elem}, \hyperpage{5}
+    \subitem {is\+Empty}, \hyperpage{6}
+  \item {buffer$<$ T $>$}, \hyperpage{5}
+
+  \indexspace
+
+  \item {is\+Empty}
+    \subitem {buffer}, \hyperpage{6}
+
+\end{theindex}
