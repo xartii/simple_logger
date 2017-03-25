@@ -1,0 +1,183 @@
+\hypertarget{classlog_msg}{}\section{Dokumentacja klasy log\+Msg}
+\label{classlog_msg}\index{log\+Msg@{log\+Msg}}
+
+
+Klasa wiadomości logowanych.  
+
+
+
+
+{\ttfamily \#include $<$logmsg.\+hpp$>$}
+
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlog_msg_a59a223eea638eb82439786fa0b21ae99}{log\+Msg} (std\+::string msg)
+\begin{DoxyCompactList}\small\item\em konstruktor tworzący obiekt wiadomość z ciągu znaków \end{DoxyCompactList}\item 
+\hyperlink{classlog_msg_a7a9c2ceecce658a2d89c17e54f50627e}{log\+Msg} ()
+\begin{DoxyCompactList}\small\item\em Domyślny konstruktor. \end{DoxyCompactList}\item 
+void \hyperlink{classlog_msg_a11cdf7b82dc82b369a5d62b721b27e46}{set\+Prefix} (std\+::string p)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca prefiks. \end{DoxyCompactList}\item 
+void \hyperlink{classlog_msg_a5877fcab52fdf21e293997e32219724f}{set\+Priority} (enum priority pr)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca priorytet. \end{DoxyCompactList}\item 
+void \hyperlink{classlog_msg_a329a01a7f2b71cd3adbc0aa637169a65}{set\+Msg} (std\+::string msg)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca wiadomość \end{DoxyCompactList}\item 
+int \hyperlink{classlog_msg_a631e3b2a26f15c3b39b0718bcf3c3a57}{get\+Priority} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca priorytet. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classlog_msg_af10adb316ec6ba7bd7db5b4c0c5de365}{get\+Prefix} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca prefiks. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classlog_msg_a19a5752d1cc3fc6a20d8571f4cbfc422}{get\+Msg} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca wiadomość \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classlog_msg_a43ba149c673ff7b4070ec5308809ccf0}{print\+Log} ()
+\begin{DoxyCompactList}\small\item\em Metoda zamieniająca wiadomość w ciąg znaków. \end{DoxyCompactList}\item 
+void \hyperlink{classlog_msg_a652a3f776718a2c5800267fa898f05e6}{calc\+Checksum} ()
+\begin{DoxyCompactList}\small\item\em Metoda obliczająca sumę kontrolną wiadomości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa wiadomości logowanych. 
+
+Klasa przechowuje pojedyńczą wiadomość, która ma być logowana 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classlog_msg_a59a223eea638eb82439786fa0b21ae99}\label{classlog_msg_a59a223eea638eb82439786fa0b21ae99}} 
+\index{log\+Msg@{log\+Msg}!log\+Msg@{log\+Msg}}
+\index{log\+Msg@{log\+Msg}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{log\+Msg()}{logMsg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily log\+Msg\+::log\+Msg (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+
+
+konstruktor tworzący obiekt wiadomość z ciągu znaków 
+
+Konstruktor tworzy obiekt wiadomość z ciągu znaków stworzonego wcześniej przez metodą print\+Log. Sprawdza poprawność sumy kontrolnej. Jeśli się nie zgadza tworzona jest pusta wiadomość. 
+\begin{DoxyParams}{Parametry}
+{\em msg} & Ciąg znaków, na podstawie którego tworzony jest obiekt wiadomości. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlog_msg_a7a9c2ceecce658a2d89c17e54f50627e}\label{classlog_msg_a7a9c2ceecce658a2d89c17e54f50627e}} 
+\index{log\+Msg@{log\+Msg}!log\+Msg@{log\+Msg}}
+\index{log\+Msg@{log\+Msg}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{log\+Msg()}{logMsg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily log\+Msg\+::log\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Domyślny konstruktor. 
+
+Domyślny konstruktor tworzący pustą wiadomość 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classlog_msg_a652a3f776718a2c5800267fa898f05e6}\label{classlog_msg_a652a3f776718a2c5800267fa898f05e6}} 
+\index{log\+Msg@{log\+Msg}!calc\+Checksum@{calc\+Checksum}}
+\index{calc\+Checksum@{calc\+Checksum}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{calc\+Checksum()}{calcChecksum()}}
+{\footnotesize\ttfamily void log\+Msg\+::calc\+Checksum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda obliczająca sumę kontrolną wiadomości. 
+
+Metoda oblicza sumę kontrolną S\+H\+A1 wszystkich pól wiadomości, priorytetu, prefiksu i jej treści. Wartość suma jest przypisywana do pola checksum obiektu. \mbox{\Hypertarget{classlog_msg_a19a5752d1cc3fc6a20d8571f4cbfc422}\label{classlog_msg_a19a5752d1cc3fc6a20d8571f4cbfc422}} 
+\index{log\+Msg@{log\+Msg}!get\+Msg@{get\+Msg}}
+\index{get\+Msg@{get\+Msg}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{get\+Msg()}{getMsg()}}
+{\footnotesize\ttfamily std\+::string log\+Msg\+::get\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca wiadomość 
+
+Metoda zwraca treść logowanej wiadomości \begin{DoxyReturn}{Zwraca}
+ciąg znaków, treść wiadomości 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_msg_af10adb316ec6ba7bd7db5b4c0c5de365}\label{classlog_msg_af10adb316ec6ba7bd7db5b4c0c5de365}} 
+\index{log\+Msg@{log\+Msg}!get\+Prefix@{get\+Prefix}}
+\index{get\+Prefix@{get\+Prefix}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{get\+Prefix()}{getPrefix()}}
+{\footnotesize\ttfamily std\+::string log\+Msg\+::get\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca prefiks. 
+
+Metoda zwraca prefiks logowanej wiadomości \begin{DoxyReturn}{Zwraca}
+Ciąg znaków, prefiks wiadomości 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_msg_a631e3b2a26f15c3b39b0718bcf3c3a57}\label{classlog_msg_a631e3b2a26f15c3b39b0718bcf3c3a57}} 
+\index{log\+Msg@{log\+Msg}!get\+Priority@{get\+Priority}}
+\index{get\+Priority@{get\+Priority}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{get\+Priority()}{getPriority()}}
+{\footnotesize\ttfamily int log\+Msg\+::get\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca priorytet. 
+
+Metoda zwracająca wartość priorytetu logowanej wiadomości. \begin{DoxyReturn}{Zwraca}
+Jedna z trzech wartości priorytetu\+: error, warning, info 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_msg_a43ba149c673ff7b4070ec5308809ccf0}\label{classlog_msg_a43ba149c673ff7b4070ec5308809ccf0}} 
+\index{log\+Msg@{log\+Msg}!print\+Log@{print\+Log}}
+\index{print\+Log@{print\+Log}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{print\+Log()}{printLog()}}
+{\footnotesize\ttfamily std\+::string log\+Msg\+::print\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zamieniająca wiadomość w ciąg znaków. 
+
+Metoda zamienia cały obiekt w ciąg znaków możliwy do przesłania między klientem a serwerem \begin{DoxyReturn}{Zwraca}
+ciąg znaków, wiadomość w formacie możliwym do przesłania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_msg_a329a01a7f2b71cd3adbc0aa637169a65}\label{classlog_msg_a329a01a7f2b71cd3adbc0aa637169a65}} 
+\index{log\+Msg@{log\+Msg}!set\+Msg@{set\+Msg}}
+\index{set\+Msg@{set\+Msg}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{set\+Msg()}{setMsg()}}
+{\footnotesize\ttfamily void log\+Msg\+::set\+Msg (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+
+
+Metoda dodająca wiadomość 
+
+Metoda pozwala ustawić treść logowanej wiadomości. 
+\begin{DoxyParams}{Parametry}
+{\em msg} & logowana wiadomość \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlog_msg_a11cdf7b82dc82b369a5d62b721b27e46}\label{classlog_msg_a11cdf7b82dc82b369a5d62b721b27e46}} 
+\index{log\+Msg@{log\+Msg}!set\+Prefix@{set\+Prefix}}
+\index{set\+Prefix@{set\+Prefix}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{set\+Prefix()}{setPrefix()}}
+{\footnotesize\ttfamily void log\+Msg\+::set\+Prefix (\begin{DoxyParamCaption}\item[{std\+::string}]{p }\end{DoxyParamCaption})}
+
+
+
+Metoda dodająca prefiks. 
+
+Metoda pozwala ustawić prefiks, który pojawi się przed logowaną wiadomością 
+\begin{DoxyParams}{Parametry}
+{\em p} & ciąg znaków, prefiks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlog_msg_a5877fcab52fdf21e293997e32219724f}\label{classlog_msg_a5877fcab52fdf21e293997e32219724f}} 
+\index{log\+Msg@{log\+Msg}!set\+Priority@{set\+Priority}}
+\index{set\+Priority@{set\+Priority}!log\+Msg@{log\+Msg}}
+\subsubsection{\texorpdfstring{set\+Priority()}{setPriority()}}
+{\footnotesize\ttfamily void log\+Msg\+::set\+Priority (\begin{DoxyParamCaption}\item[{enum priority}]{pr }\end{DoxyParamCaption})}
+
+
+
+Metoda ustawiająca priorytet. 
+
+Metoda pozwala ustawić priorytet logowanej wiadomości na jeden z wybranych. 
+\begin{DoxyParams}{Parametry}
+{\em pr} & priorytet, wartości\+: error, warning, info \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+logmsg.\+hpp\item 
+logmsg.\+cpp\end{DoxyCompactItemize}

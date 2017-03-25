@@ -1,10 +1,27 @@
 \contentsline {chapter}{\numberline {1}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}
-\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}buffer$<$ T $>$ Class Template Reference}{5}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Member Function Documentation}{5}{subsection.3.1.2}
+\contentsline {chapter}{\numberline {2}Indeks klas}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Lista klas}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Dokumentacja klas}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Dokumentacja szablonu klasy buffer$<$ T $>$}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Dokumentacja funkcji sk\IeC {\l }adowych}{5}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}add\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Elem()}{5}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty()}{6}{subsubsection.3.1.2.2}
-\contentsline {chapter}{Index}{7}{section*.4}
+\contentsline {subsubsection}{\numberline {3.1.2.2}clear\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffer()}{6}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}First()}{6}{subsubsection.3.1.2.3}
+\contentsline {subsubsection}{\numberline {3.1.2.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Last()}{6}{subsubsection.3.1.2.4}
+\contentsline {subsubsection}{\numberline {3.1.2.5}is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Empty()}{7}{subsubsection.3.1.2.5}
+\contentsline {section}{\numberline {3.2}Dokumentacja klasy log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{8}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Dokumentacja konstruktora i destruktora}{8}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [1/2]}}{8}{subsubsection.3.2.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2.2}log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg()\hspace {0.1cm}{\relax \fontsize {8}{9.5}\selectfont \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \ttfamily [2/2]}}{8}{subsubsection.3.2.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Dokumentacja funkcji sk\IeC {\l }adowych}{8}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}calc\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Checksum()}{8}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg()}{9}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Prefix()}{9}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Priority()}{9}{subsubsection.3.2.3.4}
+\contentsline {subsubsection}{\numberline {3.2.3.5}print\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Log()}{9}{subsubsection.3.2.3.5}
+\contentsline {subsubsection}{\numberline {3.2.3.6}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg()}{9}{subsubsection.3.2.3.6}
+\contentsline {subsubsection}{\numberline {3.2.3.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Prefix()}{10}{subsubsection.3.2.3.7}
+\contentsline {subsubsection}{\numberline {3.2.3.8}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Priority()}{10}{subsubsection.3.2.3.8}
+\contentsline {chapter}{Indeks}{11}{section*.5}

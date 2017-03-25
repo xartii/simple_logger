@@ -6,4 +6,6 @@ var menudata={children:[
 {text:"Indeks klas",url:"classes.html"},
 {text:"Składowe klas",url:"functions.html",children:[
 {text:"Wszystko",url:"functions.html"},
-{text:"Funkcje",url:"functions_func.html"}]}]}]}
+{text:"Funkcje",url:"functions_func.html"}]}]},
+{text:"Pliki",url:"files.html",children:[
+{text:"Lista plików",url:"files.html"}]}]}

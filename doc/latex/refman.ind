@@ -7,12 +7,62 @@
 
   \item {buffer}
     \subitem {add\+Elem}, \hyperpage{5}
+    \subitem {clear\+Buffer}, \hyperpage{6}
+    \subitem {get\+First}, \hyperpage{6}
+    \subitem {get\+Last}, \hyperpage{6}
     \subitem {is\+Empty}, \hyperpage{6}
   \item {buffer$<$ T $>$}, \hyperpage{5}
 
   \indexspace
 
+  \item {calc\+Checksum}
+    \subitem {log\+Msg}, \hyperpage{8}
+  \item {clear\+Buffer}
+    \subitem {buffer}, \hyperpage{6}
+
+  \indexspace
+
+  \item {get\+First}
+    \subitem {buffer}, \hyperpage{6}
+  \item {get\+Last}
+    \subitem {buffer}, \hyperpage{6}
+  \item {get\+Msg}
+    \subitem {log\+Msg}, \hyperpage{8}
+  \item {get\+Prefix}
+    \subitem {log\+Msg}, \hyperpage{9}
+  \item {get\+Priority}
+    \subitem {log\+Msg}, \hyperpage{9}
+
+  \indexspace
+
   \item {is\+Empty}
     \subitem {buffer}, \hyperpage{6}
+
+  \indexspace
+
+  \item {log\+Msg}, \hyperpage{7}
+    \subitem {calc\+Checksum}, \hyperpage{8}
+    \subitem {get\+Msg}, \hyperpage{8}
+    \subitem {get\+Prefix}, \hyperpage{9}
+    \subitem {get\+Priority}, \hyperpage{9}
+    \subitem {log\+Msg}, \hyperpage{8}
+    \subitem {print\+Log}, \hyperpage{9}
+    \subitem {set\+Msg}, \hyperpage{9}
+    \subitem {set\+Prefix}, \hyperpage{10}
+    \subitem {set\+Priority}, \hyperpage{10}
+
+  \indexspace
+
+  \item {print\+Log}
+    \subitem {log\+Msg}, \hyperpage{9}
+
+  \indexspace
+
+  \item {set\+Msg}
+    \subitem {log\+Msg}, \hyperpage{9}
+  \item {set\+Prefix}
+    \subitem {log\+Msg}, \hyperpage{10}
+  \item {set\+Priority}
+    \subitem {log\+Msg}, \hyperpage{10}
 
 \end{theindex}
