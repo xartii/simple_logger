@@ -1,4 +1,5 @@
 #include "logmsg.hpp" 
+#include "functions.hpp"
 #include <openssl/sha.h>
 
 
@@ -39,9 +40,8 @@ std::string logMsg::printLog() {
     output.append(this->prefix);
     output.append("|");
     output.append(this->msg);
-    output.append("||");
+    output.append("|");
     output.append(this->checksum);
-    output.append("|||");
 
     return output;
 }
@@ -63,4 +63,21 @@ void logMsg::calcChecksum() {
         sprintf(&buf[i*2], "%02x", temp[i]);
     }
     this->checksum = buf;
+}
+
+logMsg::logMsg(std::string msg) {
+    std::vector<std::string> output;
+
+    output = explode(msg, "|");
+    this->priority = std::stoi(output[0]);
+    this->prefix = output[1];
+    this->msg = output[2];
+    this->checksum = output[3];
+}
+
+logMsg::logMsg() {
+    this->priority = 0;
+    this->prefix = "";
+    this->msg = "";
+    this->checksum = "";
 }

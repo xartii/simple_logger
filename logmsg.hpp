@@ -10,6 +10,8 @@ class logMsg {
         std::string msg; /**< Treść wiadomości */
         std::string checksum; /**< Suma kontrolna logowanej wiadomości*/
     public:
+        logMsg(std::string msg);
+        logMsg();
         void setPrefix(std::string p);
         void setPriority(enum priority pr);
         void setMsg(std::string msg);
