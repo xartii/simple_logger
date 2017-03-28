@@ -1,4 +1,4 @@
-CPP_FLAGS="-ggdb"
+CPP_FLAGS=-ggdb
 
 log_test: log_main.o logmsg.o functions.o
 	g++ -o log_test log_main.o logmsg.o functions.o -lssl -lcrypto ${CPP_FLAGS}

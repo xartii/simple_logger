@@ -151,7 +151,7 @@ logMsg::logMsg() {
 
     time(&rawtime);
     timeinfo = localtime(&rawtime);
-    strftime(buffer, 128, "%R_%D", timeinfo);
+    strftime(buffer, 128, "%R %D", timeinfo);
     this->date = buffer;
     this->priority = 0;
     this->prefix = "";

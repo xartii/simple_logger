@@ -19,7 +19,7 @@ void buffer<T>::addElem(T elem) {
  */
 template <class T>
 bool buffer<T>::isEmpty() {
-    return this->buf.empty();
+    return this->buf.empty;
 }
 /**
  * @brief Metoda zwracająca pierwszy element bufora.
@@ -32,7 +32,7 @@ T buffer<T>::getFirst() {
     T tmp;
     typename std::vector<T>::iterator it;
     if(this->buf.empty())
-        return T();
+        return NULL;
     it = this->buf.begin();
     tmp = *it;
     this->buf.erase(it);
@@ -65,4 +65,3 @@ template <class T>
 void buffer<T>::clearBuffer() {
     this->buf.erase(this->buf.begin(), this->buf.end());
 }
-
