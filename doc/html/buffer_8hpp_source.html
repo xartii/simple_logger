@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SimpleLogger: Plik źródłowy buffer.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SimpleLogger
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">buffer.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classbuffer.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbuffer.html">buffer</a> {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        std::vector&lt;T&gt; buf; </div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbuffer.html#ac93ddd3a9a4bfbb30dc4df278cb51f8a">addElem</a>(T elem);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbuffer.html#ab0d55e3e80f82ff361c9a6f14599fe19">clearBuffer</a>();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        T <a class="code" href="classbuffer.html#a12c4847a2d852f62f6e17cda43d3720d">getFirst</a>();</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        T <a class="code" href="classbuffer.html#a61bf98727f79c794f4e77b36499a87f9">getLast</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classbuffer.html#a6529128cce7c8b3f85cdae95f22b0589">isEmpty</a>();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;buffer.cpp&quot;</span></div><div class="ttc" id="classbuffer_html_ac93ddd3a9a4bfbb30dc4df278cb51f8a"><div class="ttname"><a href="classbuffer.html#ac93ddd3a9a4bfbb30dc4df278cb51f8a">buffer::addElem</a></div><div class="ttdeci">void addElem(T elem)</div><div class="ttdoc">Metoda dodająca element na koniec bufora. </div><div class="ttdef"><b>Definition:</b> buffer.cpp:11</div></div>
+<div class="ttc" id="classbuffer_html_ab0d55e3e80f82ff361c9a6f14599fe19"><div class="ttname"><a href="classbuffer.html#ab0d55e3e80f82ff361c9a6f14599fe19">buffer::clearBuffer</a></div><div class="ttdeci">void clearBuffer()</div><div class="ttdoc">Metoda czyszcząca bufor. </div><div class="ttdef"><b>Definition:</b> buffer.cpp:66</div></div>
+<div class="ttc" id="classbuffer_html"><div class="ttname"><a href="classbuffer.html">buffer</a></div><div class="ttdoc">Szablon klasy bufora. </div><div class="ttdef"><b>Definition:</b> buffer.hpp:9</div></div>
+<div class="ttc" id="classbuffer_html_a61bf98727f79c794f4e77b36499a87f9"><div class="ttname"><a href="classbuffer.html#a61bf98727f79c794f4e77b36499a87f9">buffer::getLast</a></div><div class="ttdeci">T getLast()</div><div class="ttdoc">Metoda zwracająca ostatni element bufora. </div><div class="ttdef"><b>Definition:</b> buffer.cpp:50</div></div>
+<div class="ttc" id="classbuffer_html_a6529128cce7c8b3f85cdae95f22b0589"><div class="ttname"><a href="classbuffer.html#a6529128cce7c8b3f85cdae95f22b0589">buffer::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdoc">Metoda sprawdzająca stan bufora. </div><div class="ttdef"><b>Definition:</b> buffer.cpp:21</div></div>
+<div class="ttc" id="classbuffer_html_a12c4847a2d852f62f6e17cda43d3720d"><div class="ttname"><a href="classbuffer.html#a12c4847a2d852f62f6e17cda43d3720d">buffer::getFirst</a></div><div class="ttdeci">T getFirst()</div><div class="ttdoc">Metoda zwracająca pierwszy element bufora. </div><div class="ttdef"><b>Definition:</b> buffer.cpp:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

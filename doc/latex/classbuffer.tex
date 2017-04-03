@@ -5,6 +5,10 @@
 Szablon klasy bufora.  
 
 
+
+
+{\ttfamily \#include $<$buffer.\+hpp$>$}
+
 \subsection*{Metody publiczne}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,7 +37,7 @@ Szablon klasy bufora przechowującego logowane wiadomości.
 \index{buffer@{buffer}!add\+Elem@{add\+Elem}}
 \index{add\+Elem@{add\+Elem}!buffer@{buffer}}
 \subsubsection{\texorpdfstring{add\+Elem()}{addElem()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
+{\footnotesize\ttfamily template$<$class T$>$ \\
 void \hyperlink{classbuffer}{buffer}$<$ T $>$\+::add\+Elem (\begin{DoxyParamCaption}\item[{T}]{elem }\end{DoxyParamCaption})}
 
 
@@ -68,7 +72,7 @@ T \hyperlink{classbuffer}{buffer}$<$ T $>$\+::get\+First (\begin{DoxyParamCaptio
 Metoda zwracająca pierwszy element bufora. 
 
 Metoda zwraca pierwszy element bufora, a także usuwa go z bufora. \begin{DoxyReturn}{Zwraca}
-Pierwszy element bufora. 
+Pierwszy element bufora. Jeśli bufor jest pusty zwraca pustą wiadomość. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classbuffer_a61bf98727f79c794f4e77b36499a87f9}\label{classbuffer_a61bf98727f79c794f4e77b36499a87f9}} 
 \index{buffer@{buffer}!get\+Last@{get\+Last}}
@@ -100,6 +104,7 @@ true gdy bufor jest pusty, false gdy nie
 \end{DoxyReturn}
 
 
-Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
 \item 
+buffer.\+hpp\item 
 buffer.\+cpp\end{DoxyCompactItemize}

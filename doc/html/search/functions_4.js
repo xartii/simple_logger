@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logmsg',['logMsg',['../classlog_msg.html#a59a223eea638eb82439786fa0b21ae99',1,'logMsg::logMsg(std::string msg)'],['../classlog_msg.html#a7a9c2ceecce658a2d89c17e54f50627e',1,'logMsg::logMsg()']]]
+  ['isbuffered',['isBuffered',['../classlog_server.html#a776ab033d6fe36605b9655da4ecfd56f',1,'logServer']]],
+  ['isempty',['isEmpty',['../classbuffer.html#a6529128cce7c8b3f85cdae95f22b0589',1,'buffer']]]
 ];

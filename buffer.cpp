@@ -25,7 +25,8 @@ bool buffer<T>::isEmpty() {
  * @brief Metoda zwracająca pierwszy element bufora.
  *
  * Metoda zwraca pierwszy element bufora, a także usuwa go z bufora.
- * @return Pierwszy element bufora.
+ * @return Pierwszy element bufora. Jeśli bufor jest pusty zwraca pustą
+ * wiadomość.
  */
 template <class T>
 T buffer<T>::getFirst() {

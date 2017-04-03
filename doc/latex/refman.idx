@@ -30,3 +30,14 @@
 \indexentry{set\+Prefix@{set\+Prefix}!log\+Msg@{log\+Msg}|hyperpage}{10}
 \indexentry{log\+Msg@{log\+Msg}!set\+Priority@{set\+Priority}|hyperpage}{10}
 \indexentry{set\+Priority@{set\+Priority}!log\+Msg@{log\+Msg}|hyperpage}{10}
+\indexentry{log\+Server@{log\+Server}|hyperpage}{10}
+\indexentry{log\+Server@{log\+Server}!enable\+Buffering@{enable\+Buffering}|hyperpage}{11}
+\indexentry{enable\+Buffering@{enable\+Buffering}!log\+Server@{log\+Server}|hyperpage}{11}
+\indexentry{log\+Server@{log\+Server}!is\+Buffered@{is\+Buffered}|hyperpage}{11}
+\indexentry{is\+Buffered@{is\+Buffered}!log\+Server@{log\+Server}|hyperpage}{11}
+\indexentry{log\+Server@{log\+Server}!set\+Local\+Socket@{set\+Local\+Socket}|hyperpage}{12}
+\indexentry{set\+Local\+Socket@{set\+Local\+Socket}!log\+Server@{log\+Server}|hyperpage}{12}
+\indexentry{log\+Server@{log\+Server}!set\+Log\+Path@{set\+Log\+Path}|hyperpage}{12}
+\indexentry{set\+Log\+Path@{set\+Log\+Path}!log\+Server@{log\+Server}|hyperpage}{12}
+\indexentry{log\+Server@{log\+Server}!set\+Remote\+Port@{set\+Remote\+Port}|hyperpage}{12}
+\indexentry{set\+Remote\+Port@{set\+Remote\+Port}!log\+Server@{log\+Server}|hyperpage}{12}

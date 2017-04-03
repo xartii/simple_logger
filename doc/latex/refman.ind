@@ -22,6 +22,11 @@
 
   \indexspace
 
+  \item {enable\+Buffering}
+    \subitem {log\+Server}, \hyperpage{11}
+
+  \indexspace
+
   \item {get\+First}
     \subitem {buffer}, \hyperpage{6}
   \item {get\+Last}
@@ -35,6 +40,8 @@
 
   \indexspace
 
+  \item {is\+Buffered}
+    \subitem {log\+Server}, \hyperpage{11}
   \item {is\+Empty}
     \subitem {buffer}, \hyperpage{6}
 
@@ -50,6 +57,12 @@
     \subitem {set\+Msg}, \hyperpage{9}
     \subitem {set\+Prefix}, \hyperpage{10}
     \subitem {set\+Priority}, \hyperpage{10}
+  \item {log\+Server}, \hyperpage{10}
+    \subitem {enable\+Buffering}, \hyperpage{11}
+    \subitem {is\+Buffered}, \hyperpage{11}
+    \subitem {set\+Local\+Socket}, \hyperpage{12}
+    \subitem {set\+Log\+Path}, \hyperpage{12}
+    \subitem {set\+Remote\+Port}, \hyperpage{12}
 
   \indexspace
 
@@ -58,11 +71,17 @@
 
   \indexspace
 
+  \item {set\+Local\+Socket}
+    \subitem {log\+Server}, \hyperpage{12}
+  \item {set\+Log\+Path}
+    \subitem {log\+Server}, \hyperpage{12}
   \item {set\+Msg}
     \subitem {log\+Msg}, \hyperpage{9}
   \item {set\+Prefix}
     \subitem {log\+Msg}, \hyperpage{10}
   \item {set\+Priority}
     \subitem {log\+Msg}, \hyperpage{10}
+  \item {set\+Remote\+Port}
+    \subitem {log\+Server}, \hyperpage{12}
 
 \end{theindex}

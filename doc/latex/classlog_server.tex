@@ -1,0 +1,139 @@
+\hypertarget{classlog_server}{}\section{Dokumentacja klasy log\+Server}
+\label{classlog_server}\index{log\+Server@{log\+Server}}
+
+
+Klasa serwera logującego.  
+
+
+
+
+{\ttfamily \#include $<$logserver.\+hpp$>$}
+
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlog_server_acc990124cb133cbcad5f9ce8bce04bac}{set\+Remote\+Port} (int p)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca numer portu. \end{DoxyCompactList}\item 
+void \hyperlink{classlog_server_afbafe39a17024928f9b807e01ab5d592}{set\+Local\+Socket} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca plik lokalnego gniazda. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlog_server_a207f02697f660fd3b6af3119fb0779b4}\label{classlog_server_a207f02697f660fd3b6af3119fb0779b4}} 
+int {\bfseries start\+Locallistener} ()
+\item 
+\mbox{\Hypertarget{classlog_server_ae9c4341258cae8ed4608e0425b11b013}\label{classlog_server_ae9c4341258cae8ed4608e0425b11b013}} 
+int {\bfseries start\+Remote\+Listener} ()
+\item 
+\mbox{\Hypertarget{classlog_server_a97c4118b567cdcd78eec882fbaf4cd9f}\label{classlog_server_a97c4118b567cdcd78eec882fbaf4cd9f}} 
+int {\bfseries stop\+Local\+Listener} ()
+\item 
+\mbox{\Hypertarget{classlog_server_aad3fc8d8b224eee734af1c9bbd8fc6f1}\label{classlog_server_aad3fc8d8b224eee734af1c9bbd8fc6f1}} 
+int {\bfseries stop\+Remote\+Listener} ()
+\item 
+void \hyperlink{classlog_server_ac5dfb2bbf7b156d05b07502081abc573}{set\+Log\+Path} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca ścieżkę logów. \end{DoxyCompactList}\item 
+bool \hyperlink{classlog_server_abce2355c2c8d6589a172f57c4f439d99}{enable\+Buffering} (bool state)
+\begin{DoxyCompactList}\small\item\em Metoda włączająca buforowanie. \end{DoxyCompactList}\item 
+bool \hyperlink{classlog_server_a776ab033d6fe36605b9655da4ecfd56f}{is\+Buffered} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca stan buforowania. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlog_server_ac7b78a08896e80845e3966a78997da76}\label{classlog_server_ac7b78a08896e80845e3966a78997da76}} 
+int {\bfseries save\+Logs} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa serwera logującego. 
+
+Klasa obsługująca serwer logujący przychodzące wiadomości. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classlog_server_abce2355c2c8d6589a172f57c4f439d99}\label{classlog_server_abce2355c2c8d6589a172f57c4f439d99}} 
+\index{log\+Server@{log\+Server}!enable\+Buffering@{enable\+Buffering}}
+\index{enable\+Buffering@{enable\+Buffering}!log\+Server@{log\+Server}}
+\subsubsection{\texorpdfstring{enable\+Buffering()}{enableBuffering()}}
+{\footnotesize\ttfamily bool log\+Server\+::enable\+Buffering (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Metoda włączająca buforowanie. 
+
+Metoda pozwala włączać lub wyłączać buforowanie przychodzących wiadomości przed ich zapisem do logów.
+
+
+\begin{DoxyParams}{Parametry}
+{\em state} & false -\/ buforowanie wyłączone, true -\/ buforowanie włączone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Aktualnie ustawiony stan buforowania 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_server_a776ab033d6fe36605b9655da4ecfd56f}\label{classlog_server_a776ab033d6fe36605b9655da4ecfd56f}} 
+\index{log\+Server@{log\+Server}!is\+Buffered@{is\+Buffered}}
+\index{is\+Buffered@{is\+Buffered}!log\+Server@{log\+Server}}
+\subsubsection{\texorpdfstring{is\+Buffered()}{isBuffered()}}
+{\footnotesize\ttfamily bool log\+Server\+::is\+Buffered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca stan buforowania. 
+
+Metoda zwraca informacje o tym czy włączone jest buforowanie przychodzących wiadomości do logowania.
+
+\begin{DoxyReturn}{Zwraca}
+true -\/ buforowanie jest włączone, false -\/ buforowanie jest wyłączone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlog_server_afbafe39a17024928f9b807e01ab5d592}\label{classlog_server_afbafe39a17024928f9b807e01ab5d592}} 
+\index{log\+Server@{log\+Server}!set\+Local\+Socket@{set\+Local\+Socket}}
+\index{set\+Local\+Socket@{set\+Local\+Socket}!log\+Server@{log\+Server}}
+\subsubsection{\texorpdfstring{set\+Local\+Socket()}{setLocalSocket()}}
+{\footnotesize\ttfamily void log\+Server\+::set\+Local\+Socket (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Metoda ustawiająca plik lokalnego gniazda. 
+
+Metoda ustawia ścieżkę do pliku, który ma być używany do obsługi lokalnych połączeń do serwera.
+
+
+\begin{DoxyParams}{Parametry}
+{\em filename} & ciąg znaków, ścieżka do pliku \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlog_server_ac5dfb2bbf7b156d05b07502081abc573}\label{classlog_server_ac5dfb2bbf7b156d05b07502081abc573}} 
+\index{log\+Server@{log\+Server}!set\+Log\+Path@{set\+Log\+Path}}
+\index{set\+Log\+Path@{set\+Log\+Path}!log\+Server@{log\+Server}}
+\subsubsection{\texorpdfstring{set\+Log\+Path()}{setLogPath()}}
+{\footnotesize\ttfamily void log\+Server\+::set\+Log\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Metoda ustawiająca ścieżkę logów. 
+
+Metoda pozwala ustawić ścieżkę w której zapisywane będą logowane wiadomości.
+
+
+\begin{DoxyParams}{Parametry}
+{\em path} & ścieżka, w której zapisywane mają być logi. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlog_server_acc990124cb133cbcad5f9ce8bce04bac}\label{classlog_server_acc990124cb133cbcad5f9ce8bce04bac}} 
+\index{log\+Server@{log\+Server}!set\+Remote\+Port@{set\+Remote\+Port}}
+\index{set\+Remote\+Port@{set\+Remote\+Port}!log\+Server@{log\+Server}}
+\subsubsection{\texorpdfstring{set\+Remote\+Port()}{setRemotePort()}}
+{\footnotesize\ttfamily void log\+Server\+::set\+Remote\+Port (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})}
+
+
+
+Metoda ustawiająca numer portu. 
+
+Metoda ustawia numer portu do nasłuchiwania zdalnych połączeń. Jeśli numer portu jest z poza zakresu 0,65536 ustawiana jest wartość domyślna 10000.
+
+
+\begin{DoxyParams}{Parametry}
+{\em p} & numer portu, liczba całkowita \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+logserver.\+hpp\item 
+logserver.\+cpp\end{DoxyCompactItemize}

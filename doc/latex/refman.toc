@@ -24,4 +24,12 @@
 \contentsline {subsubsection}{\numberline {3.2.3.6}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Msg()}{9}{subsubsection.3.2.3.6}
 \contentsline {subsubsection}{\numberline {3.2.3.7}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Prefix()}{10}{subsubsection.3.2.3.7}
 \contentsline {subsubsection}{\numberline {3.2.3.8}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Priority()}{10}{subsubsection.3.2.3.8}
-\contentsline {chapter}{Indeks}{11}{section*.5}
+\contentsline {section}{\numberline {3.3}Dokumentacja klasy log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Server}{10}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Dokumentacja funkcji sk\IeC {\l }adowych}{11}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}enable\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffering()}{11}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Buffered()}{12}{subsubsection.3.3.2.2}
+\contentsline {subsubsection}{\numberline {3.3.2.3}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Local\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Socket()}{12}{subsubsection.3.3.2.3}
+\contentsline {subsubsection}{\numberline {3.3.2.4}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Log\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Path()}{12}{subsubsection.3.3.2.4}
+\contentsline {subsubsection}{\numberline {3.3.2.5}set\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Remote\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Port()}{12}{subsubsection.3.3.2.5}
+\contentsline {chapter}{Indeks}{15}{section*.6}

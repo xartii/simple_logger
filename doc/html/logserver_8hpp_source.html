@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SimpleLogger: Plik źródłowy logserver.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SimpleLogger
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">logserver.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classlog_server.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlog_server.html">logServer</a> {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordtype">int</span> port = 10000;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        std::string path;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        std::string localSock;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordtype">bool</span> buffering;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classbuffer.html">buffer&lt;logMsg&gt;</a> buf;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlog_server.html#acc990124cb133cbcad5f9ce8bce04bac">setRemotePort</a>(<span class="keywordtype">int</span> p);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlog_server.html#afbafe39a17024928f9b807e01ab5d592">setLocalSocket</a>(std::string filename);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">int</span> startLocallistener();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span> startRemoteListener();</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">int</span> stopLocalListener();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> stopRemoteListener();</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classlog_server.html#ac5dfb2bbf7b156d05b07502081abc573">setLogPath</a>(std::string path);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classlog_server.html#abce2355c2c8d6589a172f57c4f439d99">enableBuffering</a>(<span class="keywordtype">bool</span> state);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classlog_server.html#a776ab033d6fe36605b9655da4ecfd56f">isBuffered</a>();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">int</span> saveLogs();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div><div class="ttc" id="classlog_server_html_ac5dfb2bbf7b156d05b07502081abc573"><div class="ttname"><a href="classlog_server.html#ac5dfb2bbf7b156d05b07502081abc573">logServer::setLogPath</a></div><div class="ttdeci">void setLogPath(std::string path)</div><div class="ttdoc">Metoda ustawiająca ścieżkę logów. </div><div class="ttdef"><b>Definition:</b> logserver.cpp:55</div></div>
+<div class="ttc" id="classlog_server_html_acc990124cb133cbcad5f9ce8bce04bac"><div class="ttname"><a href="classlog_server.html#acc990124cb133cbcad5f9ce8bce04bac">logServer::setRemotePort</a></div><div class="ttdeci">void setRemotePort(int p)</div><div class="ttdoc">Metoda ustawiająca numer portu. </div><div class="ttdef"><b>Definition:</b> logserver.cpp:14</div></div>
+<div class="ttc" id="classlog_server_html_a776ab033d6fe36605b9655da4ecfd56f"><div class="ttname"><a href="classlog_server.html#a776ab033d6fe36605b9655da4ecfd56f">logServer::isBuffered</a></div><div class="ttdeci">bool isBuffered()</div><div class="ttdoc">Metoda zwracająca stan buforowania. </div><div class="ttdef"><b>Definition:</b> logserver.cpp:67</div></div>
+<div class="ttc" id="classbuffer_html"><div class="ttname"><a href="classbuffer.html">buffer&lt; logMsg &gt;</a></div></div>
+<div class="ttc" id="classlog_server_html"><div class="ttname"><a href="classlog_server.html">logServer</a></div><div class="ttdoc">Klasa serwera logującego. </div><div class="ttdef"><b>Definition:</b> logserver.hpp:6</div></div>
+<div class="ttc" id="classlog_server_html_afbafe39a17024928f9b807e01ab5d592"><div class="ttname"><a href="classlog_server.html#afbafe39a17024928f9b807e01ab5d592">logServer::setLocalSocket</a></div><div class="ttdeci">void setLocalSocket(std::string filename)</div><div class="ttdoc">Metoda ustawiająca plik lokalnego gniazda. </div><div class="ttdef"><b>Definition:</b> logserver.cpp:30</div></div>
+<div class="ttc" id="classlog_server_html_abce2355c2c8d6589a172f57c4f439d99"><div class="ttname"><a href="classlog_server.html#abce2355c2c8d6589a172f57c4f439d99">logServer::enableBuffering</a></div><div class="ttdeci">bool enableBuffering(bool state)</div><div class="ttdoc">Metoda włączająca buforowanie. </div><div class="ttdef"><b>Definition:</b> logserver.cpp:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

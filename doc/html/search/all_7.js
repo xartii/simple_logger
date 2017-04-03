@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme',['README',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['printlog',['printLog',['../classlog_msg.html#a43ba149c673ff7b4070ec5308809ccf0',1,'logMsg']]]
 ];
