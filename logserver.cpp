@@ -7,6 +7,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <signal.h>
+#include <fstream>
+#include <iostream>
 #include "buffer.hpp"
 #include "logmsg.hpp"
 #include "logserver.hpp"
@@ -150,6 +152,10 @@ int logServer::startRemoteListener() {
     				status = recv(childfd, (char*)&c, 1, 0);
     				if(c == '\n') {
     					logMsg log(msg);
+                        if((log.getMsg()).strcmp("") == 0) {
+                            msg.clear();
+                            continue;
+                        }
     					if(this->buffering) {
     						this->buf.addElem(log);
     					} else {
@@ -165,10 +171,47 @@ int logServer::startRemoteListener() {
     	}
     	close(this->remotefd);
     }
+
+    return 0;
 }
 
 void logServer::stopRemoteListener() {
 	for(pid_t p : this->listeners) {
         kill(p, SIGTERM);
     }
+}
+
+void logServer::_saveMsg(logMsg ms) {
+    std::string fPath;
+    switch(ms.getPriority()) {
+        case 2:
+            fPath = this->path + "/error.log";
+            break;
+        case 1:
+            fPath = this->path + "/warning.log";
+            break;
+        case 0:
+            fPath = this->path + "/info.log";
+            break;
+    }
+
+    std::ofstream fHnd (fPath, ios::append);
+
+    fHnd << ms.printLog() << std::endl;
+    fHnd.close();
+}
+
+int logServer::saveLogs() {
+    logMsg ms;
+    
+    if(this->buffering == false || this->buf.isEmpty()) {
+        return -1;
+    }
+
+    while(!this->buf.isEmpty()) {
+        ms = this->buf.getFirst();
+        this->_saveMsg(ms);
+    }
+
+    return 0;
 }
