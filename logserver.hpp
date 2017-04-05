@@ -13,6 +13,7 @@ class logServer {
         bool buffering;
 		bool listening = true;
         buffer<logMsg> buf;
+        std::vector<pid_t> listeners;
         void _saveMsg(logMsg ms);
     public:
         void setRemotePort(int p);

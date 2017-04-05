@@ -95,7 +95,6 @@ int logServer::startRemoteListener() {
 	int status;
 	int yes = 1;
 	std::string msg;
-	std::vector<pid_t> listeners;
 	pid_t pid;
 	char c;
 	
@@ -131,42 +130,45 @@ int logServer::startRemoteListener() {
 	if(status == -1) 
 		return -1;
 		
-    this->listening = true;
     socklen_t addrlen = sizeof remoteinfo;
-	while(this->listening) {
-		childfd = accept(this->remotefd, (struct sockaddr*)&remoteinfo, &addrlen);
-		
-		if(childfd == -1)
-			continue;
-		pid = fork();
-		if(pid > 0)
-		    listeners.push_back(pid);
-
-		if(pid == 0) {
-			close(this->remotefd);
-			do {
-				status = recv(childfd, (char*)&c, 1, 0);
-				if(c == '\n') {
-					logMsg log(msg);
-					if(this->buffering) {
-						this->buf.addElem(log);
-					} else {
-						this->_saveMsg(log);
-					}
-					msg.clear();
-				} else {
-					msg +=c;
-				}
-			} while(status != 0);
-		}
-		close(childfd);
-	}
-	close(this->remotefd);
-	for(pid_t p : listeners) {
-	    kill(p, SIGTERM);
-	}
+    pid = fork();
+    if(pid > 0) 
+        this->listeners.push_back(pid);
+    if(pid == 0) {
+    	while(1) {
+    		childfd = accept(this->remotefd, (struct sockaddr*)&remoteinfo, &addrlen);
+    		
+    		if(childfd == -1)
+    			continue;
+    		pid = fork();
+    		if(pid > 0)
+    		    this->listeners.push_back(pid);
+    
+	    	if(pid == 0) {
+    			close(this->remotefd);
+    			do {
+    				status = recv(childfd, (char*)&c, 1, 0);
+    				if(c == '\n') {
+    					logMsg log(msg);
+    					if(this->buffering) {
+    						this->buf.addElem(log);
+    					} else {
+    						this->_saveMsg(log);
+    					}
+    					msg.clear();
+    				} else {
+    					msg +=c;
+    				}
+    			} while(status != 0);
+    		}
+    		close(childfd);
+    	}
+    	close(this->remotefd);
+    }
 }
 
 void logServer::stopRemoteListener() {
-	this->listening = false;
+	for(pid_t p : this->listeners) {
+        kill(p, SIGTERM);
+    }
 }
