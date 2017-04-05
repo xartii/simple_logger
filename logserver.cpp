@@ -1,4 +1,12 @@
 #include <string>
+#include <cstring>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <signal.h>
 #include "buffer.hpp"
 #include "logmsg.hpp"
 #include "logserver.hpp"
@@ -17,6 +25,17 @@ void logServer::setRemotePort(int p){
     } else {
         this->port = p;
     }
+}
+
+/**
+ * @brief Metoda ustawiająca adres serwera
+ * 
+ * Metoda ustawia adres, na którym serwer ma nasłuchiwać zdalnych połączeń
+ * 
+ * @param ip ciąg znaków, adres ip lub nazwa domenowa, na której serwer ma słuchać
+ */
+void logServer::setRemoteAddress(std::string ip) {
+	this->remoteAddr = ip;
 }
 
 /**
@@ -66,4 +85,88 @@ void logServer::setLogPath(std::string path){
  */
 bool logServer::isBuffered(){
     return this->buffering;
+}
+
+int logServer::startRemoteListener() {
+	int childfd;
+	struct addrinfo hints;
+	struct addrinfo *servinfo;
+	struct sockaddr_storage remoteinfo;
+	int status;
+	int yes = 1;
+	std::string msg;
+	std::vector<pid_t> listeners;
+	pid_t pid;
+	char c;
+	
+	memset(&hints, 0, sizeof hints);
+	
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
+	
+    std::string port = std::to_string(this->port);
+	status = getaddrinfo(this->remoteAddr.c_str(), port.c_str(), &hints, &servinfo);
+
+	if(status != 0) 
+		return -1;
+		
+	if(servinfo == NULL)
+		return -1;
+		
+	this->remotefd = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol);
+	
+	if(this->remotefd == -1)
+		return -1;
+		
+	if(setsockopt(this->remotefd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
+		return -1;
+		
+	if(bind(this->remotefd, servinfo->ai_addr, servinfo->ai_addrlen) == -1) {
+		close(this->remotefd);
+		return -1;
+	}
+	
+    status = listen(this->remotefd, 10);
+	if(status == -1) 
+		return -1;
+		
+    this->listening = true;
+    socklen_t addrlen = sizeof remoteinfo;
+	while(this->listening) {
+		childfd = accept(this->remotefd, (struct sockaddr*)&remoteinfo, &addrlen);
+		
+		if(childfd == -1)
+			continue;
+		pid = fork();
+		if(pid > 0)
+		    listeners.push_back(pid);
+
+		if(pid == 0) {
+			close(this->remotefd);
+			do {
+				status = recv(childfd, (char*)&c, 1, 0);
+				if(c == '\n') {
+					logMsg log(msg);
+					if(this->buffering) {
+						this->buf.addElem(log);
+					} else {
+						this->_saveMsg(log);
+					}
+					msg.clear();
+				} else {
+					msg +=c;
+				}
+			} while(status != 0);
+		}
+		close(childfd);
+	}
+	close(this->remotefd);
+	for(pid_t p : listeners) {
+	    kill(p, SIGTERM);
+	}
+}
+
+void logServer::stopRemoteListener() {
+	this->listening = false;
 }
