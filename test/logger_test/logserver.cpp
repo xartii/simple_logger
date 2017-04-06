@@ -9,6 +9,7 @@
 #include <signal.h>
 #include <fstream>
 #include <iostream>
+#include "buffer.hpp"
 #include "logmsg.hpp"
 #include "logserver.hpp"
 
@@ -39,7 +40,31 @@ void logServer::setRemoteAddress(std::string ip) {
 	this->remoteAddr = ip;
 }
 
+/**
+ * @brief Metoda ustawiająca plik lokalnego gniazda
+ *
+ * Metoda ustawia ścieżkę do pliku, który ma być używany do obsługi lokalnych
+ * połączeń do serwera.
+ *
+ * @param filename ciąg znaków, ścieżka do pliku
+ */
+void logServer::setLocalSocket(std::string filename){
+    this->localSock = filename;
+}
 
+/**
+ * @brief Metoda włączająca buforowanie
+ *
+ * Metoda pozwala włączać lub wyłączać buforowanie przychodzących wiadomości
+ * przed ich zapisem do logów.
+ *
+ * @param state false - buforowanie wyłączone, true - buforowanie włączone
+ * @return Aktualnie ustawiony stan buforowania
+ */
+bool logServer::enableBuffering(bool state) {
+    this->buffering = state;
+    return this->buffering;
+}
 
 /**
  * @brief Metoda ustawiająca ścieżkę logów.
@@ -52,7 +77,17 @@ void logServer::setLogPath(std::string path){
     this->path = path;
 }
 
-
+/**
+ * @brief Metoda zwracająca stan buforowania
+ *
+ * Metoda zwraca informacje o tym czy włączone jest buforowanie przychodzących
+ * wiadomości do logowania.
+ *
+ * @return true - buforowanie jest włączone, false - buforowanie jest wyłączone
+ */
+bool logServer::isBuffered(){
+    return this->buffering;
+}
 
 int logServer::startRemoteListener() {
 	int childfd;
@@ -96,6 +131,7 @@ int logServer::startRemoteListener() {
     status = listen(this->remotefd, 10);
 	if(status == -1) 
 		return -1;
+		
     socklen_t addrlen = sizeof remoteinfo;
     pid = fork();
     if(pid > 0) 
@@ -114,17 +150,21 @@ int logServer::startRemoteListener() {
     			close(this->remotefd);
     			do {
     				status = recv(childfd, (char*)&c, 1, 0);
-                    msg += c;
-    				if(msg.find("\n") != std::string::npos) {
-                        msg = msg.substr(0, msg.size()-1);
+    				if(c == '\n') {
     					logMsg log(msg);
                         if((log.getMsg()).compare("") == 0) {
                             msg.clear();
                             continue;
                         }
-    					this->_saveMsg(log);
+    					if(this->buffering) {
+    						this->buf.addElem(log);
+    					} else {
+    						this->_saveMsg(log);
+    					}
     					msg.clear();
-                    }
+    				} else {
+    					msg +=c;
+    				}
     			} while(status != 0);
     		}
     		close(childfd);
@@ -156,8 +196,22 @@ void logServer::_saveMsg(logMsg ms) {
     }
 
     std::ofstream fHnd (fPath, std::ios::app);
+
     fHnd << ms.printLog() << std::endl;
     fHnd.close();
 }
 
+int logServer::saveLogs() {
+    logMsg ms;
+    
+    if(this->buffering == false || this->buf.isEmpty()) {
+        return -1;
+    }
 
+    while(!this->buf.isEmpty()) {
+        ms = this->buf.getFirst();
+        this->_saveMsg(ms);
+    }
+
+    return 0;
+}

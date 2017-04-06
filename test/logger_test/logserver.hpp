@@ -1,8 +1,5 @@
 #ifndef SERV_H
 #define SERV_H
-#include <string>
-#include "buffer.hpp"
-#include "logmsg.hpp"
 /**
  * @brief Klasa serwera logującego
  *
@@ -13,7 +10,9 @@ class logServer {
         int port = 10000;
 		int remotefd;
         std::string path;
+        std::string localSock;
 		std::string remoteAddr;
+        bool buffering;
 		bool listening = true;
         buffer<logMsg> buf;
         std::vector<pid_t> listeners;
@@ -21,9 +20,15 @@ class logServer {
     public:
         void setRemotePort(int p);
 		void setRemoteAddress(std::string ip);
+        void setLocalSocket(std::string filename);
+        int startLocallistener();
         int startRemoteListener();
+        int stopLocalListener();
         void stopRemoteListener();
         void setLogPath(std::string path);
+        bool enableBuffering(bool state);
+        bool isBuffered();
+        int saveLogs();
 
 };
 #endif

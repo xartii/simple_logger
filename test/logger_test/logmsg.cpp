@@ -2,7 +2,6 @@
 #include "functions.hpp"
 #include <openssl/sha.h>
 #include <ctime>
-#include <iostream>
 
 /**
  * @brief Metoda dodająca prefiks
@@ -138,13 +137,7 @@ logMsg::logMsg(std::string msg) {
 
     output = explode(msg, "|");
     this->date = output[0];
-    if(output[1].compare("error") == 0) {
-        this->priority = 2;
-    }else if(output[1].compare("warning") == 0) {
-        this->priority = 1;
-    } else {
-        this->priority = 0;
-    }
+    this->priority = std::stoi(output[1]);
     this->prefix = output[2];
     this->msg = output[3];
     this->calcChecksum();
