@@ -8,19 +8,53 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
-
+/**
+ * @brief Funkcja włączająca buforowanie
+ *
+ * Funkcja włącza/wyłącza buforowanie wiadomości przed wysłaniem. Aby wysłać
+ * buforowane wiadomości należy użyc @see log::sendMsgs()
+ *
+ * @param state bool, true lub false, zależnie czy buforowanie ma być włączone
+ * czy nie.
+ */
 void log::enableBuffering(bool state) {
     this->buffering = state;
 }
 
+/**
+ * @brief Funkcja sprawdzająca stan połączenia
+ *
+ * Funkcja sprawdza czy klient jest połączony z serwerem logów
+ *
+ * @return bool, true lub false zależnie od tego czy klient jest połączony
+ */
 bool log::isConnected() {
     return this->connected;
 }
 
+/**
+ * @brief Funkcja sprawdzająca buforowanie
+ *
+ * Funkcja sprawza czy włączone jest buforowanie wiadomości przed wysłaniem do
+ * serwera.
+ *
+ * @return bool, true lub false zależnie od tego czy buforowanie jest włączone
+ */
 bool log::isBuffered() {
     return this->buffering;
 }
 
+/**
+ * @brief Funkcja łącząca się z serwerem
+ *
+ * Funkcja łączy klienta ze zdalnym serwerem logoów.
+ *
+ * @param host, ciąg znaków, adres IP lub nazwa domenowa hosta, do którego
+ * klient ma się podłączyć
+ * @param p, numer portu na którym ma nastąpić połączenie
+ *
+ * @returns -1 w przypadku błędu, 0 jeśli udało się połączyć.
+ */
 int log::connectRemote(std::string host, int p) {
     struct addrinfo hints;
     struct addrinfo *servinfo;
@@ -51,7 +85,9 @@ int log::connectRemote(std::string host, int p) {
     this->connected = true;
     return 0;
 }
-
+/**
+ * @brief Funkcja odłączająca klienta od serwera
+ */
 void log::disconnect() {
     if(this->connected)
         close(this->sockfd);
@@ -66,7 +102,17 @@ int log::_sendMsg(logMsg ms) {
 
     return status;
 }
-
+/**
+ * @brief Metoda dodająca wiadomość
+ *
+ * Metoda pozwala na dodawanie logowanych wiadomości. Jeśli włączone jest
+ * buforowanie wiadomość dodawana jest do bufora. Jeśli nie, jest od razu
+ * wysyłana
+ *
+ * @param ms wiadomość do logowania
+ *
+ * @returns 0 jeśli wszystko się udało, -1 w razie błędu
+ */
 int log::addMsg(logMsg ms) {
     if(this->buffering) {
         this->buf.addElem(ms);
@@ -77,6 +123,14 @@ int log::addMsg(logMsg ms) {
     return -1;
 }
 
+/**
+ * @brief Metoda wysyłająca buforowane logi.
+ *
+ * Metoda wysyła do serwera wszystkie logi aktualnie przechowywane w buforze w
+ * kolejności od pierwszego przyjętego do ostatniego.
+ *
+ * @returns -1 w razie błędu, 0 jeśli wszystko przebiegło poprawnie
+ */
 int log::sendMsgs() {
     logMsg tmp;
     int status;

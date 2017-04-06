@@ -2,7 +2,12 @@
 #define LOGGER_H
 #include <string>
 #include "buffer.hpp"
-
+/**
+ * @brief Klasa klienta logującego
+ *
+ * Klasa obsługująca łączenie z serwerem logów, a także wysyłanie wiadomości do
+ * niego
+ */
 class log {
     private:
         bool buffering = false;
