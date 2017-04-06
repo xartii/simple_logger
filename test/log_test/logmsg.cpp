@@ -2,6 +2,7 @@
 #include "functions.hpp"
 #include <openssl/sha.h>
 #include <ctime>
+#include <iostream>
 
 /**
  * @brief Metoda dodająca prefiks
@@ -74,7 +75,17 @@ std::string logMsg::printLog() {
     std::string output;
     output.append(this->date);
     output.append("|");
-    output.append(std::to_string(this->priority));
+    switch(this->priority) {
+        case 2:
+            output.append("error");
+            break;
+        case 1:
+            output.append("warning");
+            break;
+        case 0:
+            output.append("info");
+            break;
+    }
     output.append("|");
     output.append(this->prefix);
     output.append("|");
@@ -127,7 +138,13 @@ logMsg::logMsg(std::string msg) {
 
     output = explode(msg, "|");
     this->date = output[0];
-    this->priority = std::stoi(output[1]);
+    if(output[1].compare("error") == 0) {
+        this->priority = 2;
+    }else if(output[1].compare("warning") == 0) {
+        this->priority = 1;
+    } else {
+        this->priority = 0;
+    }
     this->prefix = output[2];
     this->msg = output[3];
     this->calcChecksum();
@@ -151,7 +168,7 @@ logMsg::logMsg() {
 
     time(&rawtime);
     timeinfo = localtime(&rawtime);
-    strftime(buffer, 128, "%R %D", timeinfo);
+    strftime(buffer, 128, "%R.%S %D", timeinfo);
     this->date = buffer;
     this->priority = 0;
     this->prefix = "";

@@ -1,6 +1,6 @@
 CC=g++
 CPPFLAGS=-ggdb -std=c++11
-LDFLAGS=-lssl -lcrypto
+LDFLAGS=-lssl -lcrypto -lconfig++
 
 logger_test: logmsg.o logger_test.o logger.o functions.o
 	$(CC) -o $@ $^ $(CPPFLAGS) $(LDFLAGS)
@@ -20,4 +20,4 @@ functions.o: functions.cpp functions.hpp
 
 clean:
 	rm *.o
-	rm buf_test
+	rm logger_test

@@ -53,7 +53,14 @@ void logServer::setLogPath(std::string path){
 }
 
 
-
+/**
+ * @brief Metoda uruchamiająca serwer zbierający logi
+ *
+ * Metoda uruchamia serwer nasłuchujący na porcie i adresie ustawionych
+ * wcześniej. Serwer zbiera logi i zapisuje je do katalogu podanego wcześniej.
+ *
+ * @returns zwraca 0 jeśli udało się uruchomić serwer, a -1 w razie błędu
+ */
 int logServer::startRemoteListener() {
 	int childfd;
 	struct addrinfo hints;
@@ -135,6 +142,12 @@ int logServer::startRemoteListener() {
     return 0;
 }
 
+/*
+ * @brief Metoda wyłączająca serwer zbierania logów.
+ *
+ * Metoda wyłącza serwer zbierania logów, wysyłając do wszystkich procesów
+ * potomnych sygnał SIGTERM
+ */
 void logServer::stopRemoteListener() {
 	for(pid_t p : this->listeners) {
         kill(p, SIGTERM);
