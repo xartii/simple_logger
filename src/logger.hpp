@@ -11,7 +11,6 @@
 class log {
     private:
         bool buffering = false;
-        std::string filename;
         int sockfd;
         bool connected = false;
         std::string hostname;
@@ -19,7 +18,6 @@ class log {
         int _sendMsg(logMsg ms);
     public:
         void enableBuffering(bool state);
-        int connectLocal(std::string filename);
         int connectRemote(std::string host, int p);
         bool isConnected();
         void disconnect();
